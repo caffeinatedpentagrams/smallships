@@ -1,5 +1,6 @@
 package com.talhanation.smallships.world.entity.projectile;
 
+import com.talhanation.smallships.SmallShipsDamageTypes;
 import com.talhanation.smallships.world.damagesource.ModDamageSourceTypes;
 import com.talhanation.smallships.world.entity.ship.Ship;
 import com.talhanation.smallships.world.sound.ModSoundTypes;
@@ -107,9 +108,12 @@ public abstract class AbstractCannonBall extends AbstractHurtingProjectile {
     protected void onHitBlock(BlockHitResult blockHitResult) {
         super.onHitBlock(blockHitResult);
         if (!this.getLevel().isClientSide()) {
-            Explosion.BlockInteraction blockInteraction = this.level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.NONE;
+            Level.ExplosionInteraction expl = this.level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) ?
+                    Level.ExplosionInteraction.TNT : Level.ExplosionInteraction.NONE; //TODO is TNT desired?
             boolean doesSpreadFire = false;
-            if(!isInWater()) this.getLevel().explode(this.getOwner(), getX(), getY(), getZ(), 1.25F, doesSpreadFire, blockInteraction);
+            if(!isInWater()) {
+                this.getLevel().explode(this.getOwner(), getX(), getY(), getZ(), 1.25F, doesSpreadFire, expl);
+            }
             this.remove(RemovalReason.KILLED);
         }
     }
@@ -127,7 +131,8 @@ public abstract class AbstractCannonBall extends AbstractHurtingProjectile {
         if (!this.getLevel().isClientSide()) {
             Entity hitEntity = hitResult.getEntity();
             Entity ownerEntity = this.getOwner();
-            hitEntity.hurt(ModDamageSourceTypes.cannonBall(this, ownerEntity), 19.0F);
+            //hitEntity.hurt(ModDamageSourceTypes.cannonBall(this, ownerEntity), 19.0F);
+            hitEntity.hurt(this.level.damageSources.source(SmallShipsDamageTypes.CANNONBALL), 19.0F);
 
             if (hitEntity instanceof Ship shipHitEntity) {
                 shipHitEntity.hurt(ModDamageSourceTypes.cannonBall(this, ownerEntity), random.nextInt(7) + 7);
@@ -201,13 +206,13 @@ public abstract class AbstractCannonBall extends AbstractHurtingProjectile {
         return false;
     }
 
-    @Override
+    /*@Override
     public @NotNull Packet<?> getAddEntityPacket() {
         Entity entity = this.getOwner();
         int i = entity == null ? 0 : entity.getId();
         return new ClientboundAddEntityPacket(this.getId(), this.getUUID(), this.getX(), this.getY(), this.getZ(), this.getXRot(), this.getYRot(), this.getType(), i, new Vec3(this.xPower, this.yPower, this.zPower), 0.0);
 
-    }
+    }*/ //No longer abstract, and the superclass method is exactly this.
 
     @Override
     protected boolean shouldBurn() {

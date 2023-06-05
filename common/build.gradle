@@ -4,6 +4,7 @@ architectury {
 
 loom {
     accessWidenerPath = file("src/main/resources/smallships.accesswidener")
+    //accessTransformerPath = file("src/main/resources/smallships.accesstransformer")
 }
 
 dependencies {

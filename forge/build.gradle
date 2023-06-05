@@ -13,6 +13,7 @@ loom {
     forge {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
+        //accessTransformer = 'src/main/resources/smallships.accesstransformer'
 
         mixinConfig "smallships-common.mixins.json"
         mixinConfig "smallships-common-soft.mixins.json"
