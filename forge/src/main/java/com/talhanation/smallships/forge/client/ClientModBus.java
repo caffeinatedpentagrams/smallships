@@ -10,10 +10,13 @@ import com.talhanation.smallships.client.renderer.entity.BriggRenderer;
 import com.talhanation.smallships.client.renderer.entity.CannonBallRenderer;
 import com.talhanation.smallships.client.renderer.entity.CogRenderer;
 import com.talhanation.smallships.client.renderer.entity.GalleyRenderer;
+import com.talhanation.smallships.world.damagesource.ModDamageSourceTypes;
 import com.talhanation.smallships.world.entity.ModEntityTypes;
+import com.talhanation.smallships.world.item.forge.ModItemsImpl;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +31,8 @@ public class ClientModBus {
         modEventBus.addListener(this::initRendererRegisterRenderers);
         modEventBus.addListener(this::initRendererRegisterLayerDefinitions);
         modEventBus.addListener(this::initRegisterKeyMappings);
+        //NEW
+        modEventBus.addListener(ModItemsImpl::addCreative);
     }
 
     @SubscribeEvent

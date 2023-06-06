@@ -70,10 +70,11 @@ public class Cannon extends Entity {
     }
 
     @SuppressWarnings("NullableProblems")
-    @Override
-    public Packet<?> getAddEntityPacket() {
+    //@Override
+    /*public Packet<?> getAddEntityPacket() {
         return null;
-    }
+    }*/
+    //Method no longer abstract, defaults to ClientboundAddEntityPacket
 
     public void trigger() {
         if (coolDown == 0) {

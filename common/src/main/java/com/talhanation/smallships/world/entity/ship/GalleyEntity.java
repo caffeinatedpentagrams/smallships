@@ -70,7 +70,8 @@ public class GalleyEntity extends ContainerShip implements Bannerable, Sailable,
     @Override
     public @NotNull Item getDropItem() {
         if (!SmallshipsConfig.Common.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return ModItems.GALLEY_ITEMS.get(this.getBoatType());
+        //return ModItems.GALLEY_ITEMS.get(this.getBoatType());
+        return ModItems.GALLEY_ITEMS.get(Boat.Type.byId(this.getId()));
     }
 
     @Override

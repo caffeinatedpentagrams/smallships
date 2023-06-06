@@ -15,12 +15,14 @@ import com.talhanation.smallships.world.entity.ship.abilities.Sailable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
@@ -43,6 +45,7 @@ import net.minecraft.world.phys.Vec3;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +78,8 @@ public abstract class Ship extends Boat {
     public Ship(EntityType<? extends Boat> entityType, Level level) {
         super(entityType, level);
         if (this.getCustomName() == null) this.setCustomName(Component.literal(StringUtils.capitalize(EntityType.getKey(this.getType()).getPath())));
-        this.maxUpStep = 0.6F;
+        this.setMaxUpStep(0.6F);
+        //this.maxUpStep = 0.6F;
     }
 
     @Override
@@ -334,8 +338,11 @@ public abstract class Ship extends Boat {
     public float getBiomesModifier() {
         int biomeType = this.getBiomesModifierType(); // 0 = cold; 1 = neutral; 2 = warm;
         if (biomeType == -1) return 0;
-        BlockPos pos = new BlockPos(getX(), getY() - 0.1D, getZ());
-        Optional<ResourceKey<Biome>> biome = this.level.registryAccess().registryOrThrow(Registry.BIOME_REGISTRY).getResourceKey(level.getBiome(pos).value());
+        BlockPos pos = new BlockPos((int)getX(), (int)(getY() - 0.1D), (int)getZ());
+        //Optional<ResourceKey<Biome>> biome = this.level.registryAccess().registryOrThrow(
+                //Registry.BIOME_REGISTRY).getResourceKey(level.getBiome(pos).value());
+        Optional<ResourceKey<Biome>> biome = this.level.registryAccess().registryOrThrow(
+                Registries.BIOME).getResourceKey(level.getBiome(pos).value());
 
 
         if(biome.isPresent()) {

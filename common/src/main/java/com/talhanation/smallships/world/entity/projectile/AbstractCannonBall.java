@@ -132,7 +132,7 @@ public abstract class AbstractCannonBall extends AbstractHurtingProjectile {
             Entity hitEntity = hitResult.getEntity();
             Entity ownerEntity = this.getOwner();
             //hitEntity.hurt(ModDamageSourceTypes.cannonBall(this, ownerEntity), 19.0F);
-            hitEntity.hurt(this.level.damageSources.source(SmallShipsDamageTypes.CANNONBALL), 19.0F);
+            hitEntity.hurt(this.level.damageSources().source(SmallShipsDamageTypes.CANNONBALL, ownerEntity), 19.0F);
 
             if (hitEntity instanceof Ship shipHitEntity) {
                 shipHitEntity.hurt(ModDamageSourceTypes.cannonBall(this, ownerEntity), random.nextInt(7) + 7);

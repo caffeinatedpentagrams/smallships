@@ -63,7 +63,8 @@ public class CogEntity extends ContainerShip implements Bannerable, Sailable, Ca
     @Override
     public @NotNull Item getDropItem() {
         if (!SmallshipsConfig.Common.shipGeneralDoItemDrop.get()) return ItemStack.EMPTY.getItem();
-        return ModItems.COG_ITEMS.get(this.getBoatType());
+        //return ModItems.COG_ITEMS.get(this.getBoatType());
+        return ModItems.COG_ITEMS.get(Boat.Type.byId(this.getId()));
     }
 
     @Override

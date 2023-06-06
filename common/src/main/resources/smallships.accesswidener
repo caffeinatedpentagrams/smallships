@@ -13,4 +13,5 @@ accessible method net/minecraft/client/renderer/entity/MobRenderer addVertexPair
 
 accessible method net/minecraft/world/entity/Entity getLeashOffset ()Lnet/minecraft/world/phys/Vec3;
 
-accessible method net/minecraft/world/damagesource/DamageSources source(Lnet/minecraft/resources/ResourceKey;) Lnet/minecraft/world/damagesource/DamageSource;
+accessible method net/minecraft/world/damagesource/DamageSources source (Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/world/damagesource/DamageSource;
+
