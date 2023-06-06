@@ -1,4 +1,4 @@
-package com.talhanation.smallships.world.inventory.forge;
+package com.talhanation.smallships.forge.world.inventory;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.world.inventory.ModMenuTypes;

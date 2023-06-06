@@ -1,5 +1,6 @@
-package com.talhanation.smallships;
+package com.talhanation.smallships.forge;
 
+import com.talhanation.smallships.SmallShipsDamageTypes;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.world.damagesource.DamageType;
 

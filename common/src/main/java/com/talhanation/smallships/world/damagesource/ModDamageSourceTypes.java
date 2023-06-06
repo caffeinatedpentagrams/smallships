@@ -2,7 +2,6 @@ package com.talhanation.smallships.world.damagesource;
 
 import com.ibm.icu.util.CodePointTrie;
 import com.talhanation.smallships.SmallShipsDamageTypes;
-import com.talhanation.smallships.mixin.damaging.DamageSourceAccessor;
 import com.talhanation.smallships.world.entity.projectile.AbstractCannonBall;
 import com.talhanation.smallships.world.entity.ship.Ship;
 import net.minecraft.core.Registry;

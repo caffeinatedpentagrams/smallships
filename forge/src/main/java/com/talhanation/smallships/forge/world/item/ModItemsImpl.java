@@ -1,4 +1,4 @@
-package com.talhanation.smallships.world.item.forge;
+package com.talhanation.smallships.forge.world.item;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.world.entity.ship.BriggEntity;

@@ -1,4 +1,6 @@
-package com.talhanation.smallships;
+package com.talhanation.smallships.forge;
+import com.talhanation.smallships.SmallShipsDamageTypes;
+import com.talhanation.smallships.SmallShipsMod;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;

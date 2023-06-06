@@ -1,4 +1,4 @@
-package com.talhanation.smallships.network.forge;
+package com.talhanation.smallships.forge.network;
 
 import com.talhanation.smallships.world.entity.ship.abilities.Cannonable;
 import net.minecraft.network.FriendlyByteBuf;

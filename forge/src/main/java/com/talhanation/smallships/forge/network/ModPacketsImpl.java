@@ -1,4 +1,4 @@
-package com.talhanation.smallships.network.forge;
+package com.talhanation.smallships.forge.network;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.network.ModPacket;
