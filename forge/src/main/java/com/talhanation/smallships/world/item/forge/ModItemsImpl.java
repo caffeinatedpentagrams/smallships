@@ -64,9 +64,9 @@ public class ModItemsImpl {
                 event.accept(ModItems.GALLEY_ITEMS.get(e));
             }*/
             for (Boat.Type type : Boat.Type.values()){
-                getItem(type.getName() + "_" + CogEntity.ID);
-                getItem(type.getName() + "_" + BriggEntity.ID);
-                getItem(type.getName() + "_" + GalleyEntity.ID);
+                event.accept(getItem(type.getName() + "_" + CogEntity.ID));
+                event.accept(getItem(type.getName() + "_" + BriggEntity.ID));
+                event.accept(getItem(type.getName() + "_" + GalleyEntity.ID));
             }
         }
     }

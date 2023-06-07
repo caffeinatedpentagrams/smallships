@@ -20,7 +20,6 @@ public class ModDamageSourceTypes {
 
     public static DamageSource CANNONBALL;
     public static DamageSource DAMAGE_SOURCE_SHIP;
-
     public static void init(RegistryAccess registryAccess) {
         access = registryAccess;
         CANNONBALL = getDamageSource(registryAccess, SmallShipsDamageTypes.CANNONBALL);
@@ -36,11 +35,11 @@ public class ModDamageSourceTypes {
     }
 
     public static DamageSource cannonBall(Entity entity, Entity owner) {
-        return getEntityDamageSource(access, SmallShipsDamageTypes.CANNONBALL, entity, owner);
+        return getEntityDamageSource(entity.level.registryAccess(), SmallShipsDamageTypes.CANNONBALL, entity, owner);
     }
 
     public static DamageSource shipCollision(Entity entity, Entity owner) {
-        return getEntityDamageSource(access, SmallShipsDamageTypes.DAMAGE_SOURCE_SHIP, entity, owner);
+        return getEntityDamageSource(entity.level.registryAccess(), SmallShipsDamageTypes.DAMAGE_SOURCE_SHIP, entity, owner);
     }
     /*public static DamageSource cannonBall(AbstractCannonBall cannonBall, @Nullable Entity owner) {
         return new DamageSource(, cannonBall, owner);

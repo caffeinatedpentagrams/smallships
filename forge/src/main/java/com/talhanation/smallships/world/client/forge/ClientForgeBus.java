@@ -24,7 +24,7 @@ public class ClientForgeBus {
         com.talhanation.smallships.client.option.KeyEvent.onKeyInput(client);
     }
 
-    //NEW 1.19.4 - hopefully works
+    //NEW 1.19.4 - hopefully works.
     @SubscribeEvent
     public void initDamageSources(LevelEvent.Load event){
         ModDamageSourceTypes.init(event.getLevel().registryAccess());
