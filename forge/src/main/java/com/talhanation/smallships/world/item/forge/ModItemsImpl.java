@@ -30,15 +30,18 @@ public class ModItemsImpl {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SmallShipsMod.MOD_ID);
 
     static {
-        //register("sail", () -> new SailItem((new Item.Properties()).stacksTo(16).tab(CreativeModeTab.TAB_MISC)));
+        register("sail", () -> new SailItem((new Item.Properties()).stacksTo(16)));
 
-        //register("cannon", () -> new CannonItem((new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_COMBAT)));
-        //register("cannon_ball", () -> new CannonBallItem((new Item.Properties()).stacksTo(16).tab(CreativeModeTab.TAB_COMBAT)));
+        register("cannon", () -> new CannonItem((new Item.Properties()).stacksTo(1)));
+        register("cannon_ball", () -> new CannonBallItem((new Item.Properties()).stacksTo(16)));
 
         for (Boat.Type type: Boat.Type.values()) {
-            //register(new ResourceLocation(type.getName()).getPath() + "_" + CogEntity.ID,  () -> new CogItem(type, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
-            //register(new ResourceLocation(type.getName()).getPath() + "_" + BriggEntity.ID,  () -> new BriggItem(type, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
-            //register(new ResourceLocation(type.getName()).getPath() + "_" + GalleyEntity.ID,  () -> new GalleyItem(type, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+            register(new ResourceLocation(type.getName()).getPath() + "_" + CogEntity.ID,
+                    () -> new CogItem(type, new Item.Properties().stacksTo(1)));
+            register(new ResourceLocation(type.getName()).getPath() + "_" + BriggEntity.ID,
+                    () -> new BriggItem(type, new Item.Properties().stacksTo(1)));
+            register(new ResourceLocation(type.getName()).getPath() + "_" + GalleyEntity.ID,
+                    () -> new GalleyItem(type, new Item.Properties().stacksTo(1)));
         }
     }
 
@@ -51,7 +54,7 @@ public class ModItemsImpl {
             event.accept(ModItems.CANNON);
             event.accept(ModItems.CANNON_BALL);
             event.accept(ModItems.CANNON);
-            for (Boat.Type e : ModItems.COG_ITEMS.keySet()) {
+            /*for (Boat.Type e : ModItems.COG_ITEMS.keySet()) {
                 event.accept(ModItems.COG_ITEMS.get(e));
             }
             for (Boat.Type e : ModItems.BRIGG_ITEMS.keySet()) {
@@ -59,6 +62,11 @@ public class ModItemsImpl {
             }
             for (Boat.Type e : ModItems.GALLEY_ITEMS.keySet()) {
                 event.accept(ModItems.GALLEY_ITEMS.get(e));
+            }*/
+            for (Boat.Type type : Boat.Type.values()){
+                getItem(type.getName() + "_" + CogEntity.ID);
+                getItem(type.getName() + "_" + BriggEntity.ID);
+                getItem(type.getName() + "_" + GalleyEntity.ID);
             }
         }
     }

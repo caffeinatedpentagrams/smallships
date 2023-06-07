@@ -22,8 +22,8 @@ public class ModItems {
     public static final Map<Boat.Type, Item> GALLEY_ITEMS = new HashMap<>(Boat.Type.values().length);
 
     static {
-        Boat.Type[] boatTypes = Boat.Type.values();
-        for (Boat.Type type : boatTypes) {
+        //Boat.Type[] boatTypes = Boat.Type.values();
+        for (Boat.Type type : Boat.Type.values()) {
             COG_ITEMS.put(type, getItem(type.getName() + "_" + CogEntity.ID));
             BRIGG_ITEMS.put(type, getItem(type.getName() + "_" + BriggEntity.ID));
             GALLEY_ITEMS.put(type, getItem(type.getName() + "_" + GalleyEntity.ID));
