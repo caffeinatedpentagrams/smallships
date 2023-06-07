@@ -54,15 +54,6 @@ public class ModItemsImpl {
             event.accept(ModItems.CANNON);
             event.accept(ModItems.CANNON_BALL);
             event.accept(ModItems.CANNON);
-            /*for (Boat.Type e : ModItems.COG_ITEMS.keySet()) {
-                event.accept(ModItems.COG_ITEMS.get(e));
-            }
-            for (Boat.Type e : ModItems.BRIGG_ITEMS.keySet()) {
-                event.accept(ModItems.BRIGG_ITEMS.get(e));
-            }
-            for (Boat.Type e : ModItems.GALLEY_ITEMS.keySet()) {
-                event.accept(ModItems.GALLEY_ITEMS.get(e));
-            }*/
             for (Boat.Type type : Boat.Type.values()){
                 event.accept(getItem(type.getName() + "_" + CogEntity.ID));
                 event.accept(getItem(type.getName() + "_" + BriggEntity.ID));

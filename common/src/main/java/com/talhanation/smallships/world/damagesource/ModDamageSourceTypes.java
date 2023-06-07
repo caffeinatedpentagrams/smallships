@@ -16,12 +16,10 @@ import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("DataFlowIssue")
 public class ModDamageSourceTypes {
-    private static RegistryAccess access;
 
     public static DamageSource CANNONBALL;
     public static DamageSource DAMAGE_SOURCE_SHIP;
     public static void init(RegistryAccess registryAccess) {
-        access = registryAccess;
         CANNONBALL = getDamageSource(registryAccess, SmallShipsDamageTypes.CANNONBALL);
         DAMAGE_SOURCE_SHIP = getDamageSource(registryAccess, SmallShipsDamageTypes.DAMAGE_SOURCE_SHIP);
     }
