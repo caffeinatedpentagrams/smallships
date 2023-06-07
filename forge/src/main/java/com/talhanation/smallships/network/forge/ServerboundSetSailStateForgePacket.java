@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.network;
+package com.talhanation.smallships.network.forge;
 
 import com.talhanation.smallships.world.entity.ship.abilities.Sailable;
 import net.minecraft.network.FriendlyByteBuf;

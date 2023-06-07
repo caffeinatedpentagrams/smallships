@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.client;
+package com.talhanation.smallships.world.client.forge;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.client.model.BriggModel;
@@ -11,7 +11,7 @@ import com.talhanation.smallships.client.renderer.entity.CannonBallRenderer;
 import com.talhanation.smallships.client.renderer.entity.CogRenderer;
 import com.talhanation.smallships.client.renderer.entity.GalleyRenderer;
 import com.talhanation.smallships.world.entity.ModEntityTypes;
-import com.talhanation.smallships.forge.world.item.ModItemsImpl;
+import com.talhanation.smallships.world.item.forge.ModItemsImpl;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;

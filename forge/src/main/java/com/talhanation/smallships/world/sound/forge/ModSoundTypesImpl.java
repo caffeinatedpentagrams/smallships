@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.world.sound;
+package com.talhanation.smallships.world.sound.forge;
 
 import com.talhanation.smallships.SmallShipsMod;
 import net.minecraft.resources.ResourceLocation;

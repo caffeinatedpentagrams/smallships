@@ -1,12 +1,12 @@
 package com.talhanation.smallships.forge;
 
 import com.talhanation.smallships.SmallShipsMod;
-import com.talhanation.smallships.forge.client.ClientInitializer;
+import com.talhanation.smallships.world.client.forge.ClientInitializer;
 import com.talhanation.smallships.network.ModPackets;
-import com.talhanation.smallships.forge.world.entity.ModEntityTypesImpl;
-import com.talhanation.smallships.forge.world.inventory.ModMenuTypesImpl;
-import com.talhanation.smallships.forge.world.item.ModItemsImpl;
-import com.talhanation.smallships.forge.world.sound.ModSoundTypesImpl;
+import com.talhanation.smallships.world.entity.forge.ModEntityTypesImpl;
+import com.talhanation.smallships.world.inventory.forge.ModMenuTypesImpl;
+import com.talhanation.smallships.world.item.forge.ModItemsImpl;
+import com.talhanation.smallships.world.sound.forge.ModSoundTypesImpl;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;

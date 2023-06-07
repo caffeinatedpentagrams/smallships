@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.client;
+package com.talhanation.smallships.world.client.forge;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.world.damagesource.ModDamageSourceTypes;

@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.client;
+package com.talhanation.smallships.world.client.forge;
 
 public class ClientInitializer {
     public ClientInitializer() {

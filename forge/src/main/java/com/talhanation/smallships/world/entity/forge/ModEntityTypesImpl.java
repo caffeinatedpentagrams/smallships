@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.world.entity;
+package com.talhanation.smallships.world.entity.forge;
 
 import com.talhanation.smallships.SmallShipsMod;
 import com.talhanation.smallships.world.entity.projectile.CannonBallEntity;
