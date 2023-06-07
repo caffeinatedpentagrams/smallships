@@ -1,4 +1,4 @@
-package com.talhanation.smallships.forge.network;
+package com.talhanation.smallships.config.forge;
 
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.IConfigSpec;

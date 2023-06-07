@@ -12,9 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModDamageTypeTags extends TagsProvider<DamageType> {
+public class ModDamageTypeTagsGenerator extends TagsProvider<DamageType> {
 
-    public ModDamageTypeTags(PackOutput output, CompletableFuture<Provider> provider, ExistingFileHelper existingFileHelper) {
+    public ModDamageTypeTagsGenerator(PackOutput output, CompletableFuture<Provider> provider, ExistingFileHelper existingFileHelper) {
         super(output, Registries.DAMAGE_TYPE, provider, SmallShipsMod.MOD_ID, existingFileHelper);
     }
 
