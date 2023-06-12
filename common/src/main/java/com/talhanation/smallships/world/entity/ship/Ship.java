@@ -201,18 +201,21 @@ public abstract class Ship extends Boat {
             //CALCULATE ROTATION SPEED//
             //((BoatAccessor) this).setDeltaRotation(0); // IDK WHAT THIS IS FOR BUT IT WORKS WITHOUT IT
             float rotationSpeed = Kalkuel.subtractToZero(getRotSpeed(), getVelocityResistance() * 2.5F);
+            //float rotationSpeed = Kalkuel.subtractToZero(getRotSpeed(), getVelocityResistance() * 2.0F * 2.5F);
 
             if(getDriver() != null) {
-                if (isRight()) {
+                if (isRight() && !isLeft()) {
                     if (rotationSpeed < maxRotSp) {
                         rotationSpeed = Math.min(rotationSpeed + rotAcceleration * 1 / 8, maxRotSp);
                     }
                 }
-
-                if (isLeft()) {
+                else if (isLeft() && !isRight()) {
                     if (rotationSpeed > -maxRotSp) {
                         rotationSpeed = Math.max(rotationSpeed - rotAcceleration * 1 / 8, -maxRotSp);
                     }
+                }
+                else { //NEW
+                    rotationSpeed = Kalkuel.subtractToZero(getRotSpeed(), getVelocityResistance() * 10.0F * 2.5F);
                 }
             }
             this.setRotSpeed(rotationSpeed);

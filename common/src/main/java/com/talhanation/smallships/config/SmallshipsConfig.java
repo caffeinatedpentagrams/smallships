@@ -121,9 +121,9 @@ public class SmallshipsConfig {
         Common.shipAttributeCogMaxHealth = builder
                 .define("shipAttributeCogMaxHealth", 300.0D);
         Common.shipAttributeCogMaxSpeed = builder
-                .define("shipAttributeCogMaxSpeed", 30.0D);
+                .define("shipAttributeCogMaxSpeed", 35.0D);
         Common.shipAttributeCogMaxReverseSpeed = builder
-                .define("shipAttributeCogMaxReverseSpeed", 0.1D);
+                .define("shipAttributeCogMaxReverseSpeed", 1.0D);
         Common.shipAttributeCogMaxRotationSpeed = builder
                 .define("shipAttributeCogMaxRotationSpeed", 4.5D);
         Common.shipAttributeCogAcceleration = builder
@@ -163,9 +163,9 @@ public class SmallshipsConfig {
         Common.shipAttributeBriggMaxHealth = builder
                 .define("shipAttributeBriggMaxHealth", 450.0D);
         Common.shipAttributeBriggMaxSpeed = builder
-                .define("shipAttributeBriggMaxSpeed", 35.0D);
+                .define("shipAttributeBriggMaxSpeed", 55.0D);
         Common.shipAttributeBriggMaxReverseSpeed = builder
-                .define("shipAttributeBriggMaxReverseSpeed", 0.1D);
+                .define("shipAttributeBriggMaxReverseSpeed", 1.0D);
         Common.shipAttributeBriggMaxRotationSpeed = builder
                 .define("shipAttributeBriggMaxRotationSpeed", 4.0D);
         Common.shipAttributeBriggAcceleration = builder
@@ -204,9 +204,9 @@ public class SmallshipsConfig {
         Common.shipAttributeGalleyMaxHealth = builder
                 .define("shipAttributeGalleyMaxHealth", 200.0D);
         Common.shipAttributeGalleyMaxSpeed = builder
-                .define("shipAttributeGalleyMaxSpeed", 30.0D);
+                .define("shipAttributeGalleyMaxSpeed", 47.0D);
         Common.shipAttributeGalleyMaxReverseSpeed = builder
-                .define("shipAttributeGalleyMaxReverseSpeed", 0.1D);
+                .define("shipAttributeGalleyMaxReverseSpeed", 1.0D);
         Common.shipAttributeGalleyMaxRotationSpeed = builder
                 .define("shipAttributeGalleyMaxRotationSpeed", 5.0D);
         Common.shipAttributeGalleyAcceleration = builder
